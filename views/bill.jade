@@ -1,0 +1,29 @@
+.bill
+  h3 Your bill for #{month}
+  p Bill date 
+    b {{$root.customer.monthlyUsage.#{month}.endDate | date:'d MMMM'}}
+  table.table.table-bordered
+    thead
+      tr
+        td 
+        td Used
+        td Charge
+    tbody
+      tr
+        td Data
+        td {{$root.customer.monthlyUsage.#{month}.data}} MB
+        td {{$root.customer.monthlyUsage.#{month}.charge.data | currency:'£'}}
+      tr
+        td Texts
+        td {{$root.customer.monthlyUsage.#{month}.texts}} texts
+        td {{$root.customer.monthlyUsage.#{month}.charge.texts | currency:'£'}}
+      tr
+        td Minutes
+        td {{$root.customer.monthlyUsage.#{month}.minutes}} minutes
+        td {{$root.customer.monthlyUsage.#{month}.charge.minutes | currency:'£'}}
+      tr.active
+        td Total
+        td
+        td {{$root.customer.monthlyUsage.#{month}.charge.total | currency:'£' }}
+  p We'll take your payment by direct debit on or just after {{$root.customer.monthlyUsage.#{month}.endDate | plus14Days | date:'d MMMM'}}
+    

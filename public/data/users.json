@@ -1,0 +1,103 @@
+{
+    "users": {
+        "system": {
+            "name": {
+                "first": "Sytem"
+            },
+            "isCustomer": false,
+            "picture": "vodafone.jpg",
+            "info": "This account is used for sending you automatic information based on external events. E.g. your monthly bill or a change to your account details"
+        },
+        "watson": {
+            "name": {
+                "first": "Watson"
+            },
+            "isCustomer": false,
+            "picture": "watson.jpg",
+            "info": "Hi I'm Watson, I can help answer your questions or make changes to your account for you automatically. If I can't help I will ask one of my human colleagues to assist you."
+        },
+        "lucille.fournier": {
+            "name": {
+                "first": "Lucille",
+                "last": "Fournier"
+            },
+            "userName": "lucille.fournier",
+            "email": "lucille.fournier@vodafone.com",
+            "isCustomer": false,
+            "picture": "lucille.jpg",
+            "isCSR": true,
+            "info": "Hi, I'm an expert Vodafone advisor. I can help you with any questions or changes to your account."
+        },
+        "paul.hansen": {
+            "name": {
+                "first": "Paul",
+                "last": "Example"
+            },
+            "userName": "paul.hansen",
+            "email": "paul@example.com",
+            "isCustomer": true,
+            "picture": "paul.jpg",
+            "phone": "Samsung Galaxy S6",
+            "os": "android",
+            "contract": {
+                "data": 1,
+                "minutes": 600,
+                "texts": "Infinity"
+            },
+            "monthlyUsage": {
+                "November": {
+                    "data": 154,
+                    "minutes": 54,
+                    "texts": 187,
+                    "startDate": "2015-011-01T00:00:05.0Z",
+                    "endDate": "2015-12-02T00:00:05.0Z",
+                    "charge": {
+                        "total": 20.00,
+                        "data": 0,
+                        "minutes": 0,
+                        "texts": 0
+                    }
+                },
+                "October": {
+                    "data": 916,
+                    "minutes": 184,
+                    "texts": 187,
+                    "startDate": "2015-10-01T00:00:05.0Z",
+                    "endDate": "2015-11-02T00:00:05.0Z",
+                    "charge": {
+                        "total": 20.00,
+                        "data": 0,
+                        "minutes": 0,
+                        "texts": 0
+                    }
+                },
+                "September": {
+                    "data": 925,
+                    "minutes": 64,
+                    "texts": 217,
+                    "startDate": "2015-09-01T00:00:05.0Z",
+                    "endDate": "2015-10-02T00:00:05.0Z",
+                    "charge": {
+                        "total": 20.00,
+                        "data": 0,
+                        "minutes": 0,
+                        "texts": 0
+                    }
+                },
+                "August": {
+                    "data": 896,
+                    "minutes": 125,
+                    "texts": 350,
+                    "startDate": "2015-08-01T00:00:05.0Z",
+                    "endDate": "2015-09-02T00:00:05.0Z",
+                    "charge": {
+                        "total": 20.00,
+                        "data": 0,
+                        "minutes": 0,
+                        "texts": 0
+                    }
+                }
+            }
+        }
+    }
+}

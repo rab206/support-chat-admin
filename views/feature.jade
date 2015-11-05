@@ -1,0 +1,18 @@
+div.feature(ng-controller="FeatureCtrl", data-feature="#{feature}", data-os="#{os}")
+  .slider
+    .row
+      .col-xs-12(ng-bind-html="data.text")
+    .row(ng-swipe-right="showPrev()", ng-swipe-left="showNext()")
+      span.col-xs-1.fa-stack.fa-2x(ng-click="showPrev()", ng-show="data.steps.length > 1")
+        i.fa.fa-circle.fa-stack-2x.icon-background
+        i.fa.fa-arrow-left.fa-stack-1x
+      .col-xs-10(ng-repeat="step in data.steps", ng-show="isActive($index)")
+        .row
+          p Step {{$index + 1}} of {{data.steps.length}}
+          img.col-xs-6(ng-src="{{step.img}}")
+          div(ng-class="step.img ? 'col-xs-6' : 'col-xs-12'", ng-bind-html="step.text")
+      span.col-xs-1.next.fa-stack.fa-2x(ng-click="showNext()", ng-show="data.steps.length > 1")
+        i.fa.fa-circle.fa-stack-2x.icon-background
+        i.fa.fa-arrow-right.fa-stack-1x
+    .row(ng-show="os == $root.customer.os")
+      p.col-xs-12 These are the instructions for your android phone. If you would like instructions for a different device just let me know.

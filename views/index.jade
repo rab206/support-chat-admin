@@ -1,0 +1,54 @@
+doctype html
+html(lang='en', ng-app='chatApp')
+  head
+    title Vod Support Chat
+    
+    meta(name='viewport', content='user-scalable=no')
+    
+    link(rel='shortcut icon', href='/images/favicon.ico', type='image/x-icon')
+    link(rel='icon', href='/images/favicon.ico', type='image/x-icon')
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
+    link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', type='text/css', rel='stylesheet')
+    link(href='/css/style.css', type='text/css', rel='stylesheet')
+    
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(type='text/javascript', src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+    script(type='text/javascript', src='//vod-support-rab206.c9.io/socket.io/socket.io.js')
+    script(type='text/javascript', src='/js/index.js')
+  body(style="overflow-x:hidden", ng-controller='ChatCtrl')
+    nav.navbar.navbar-default.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.navbar-brand
+            img.img-responsive.img-circle(src="images/vodafone.jpg")
+          .navbar-header
+            h3 Vodafone Support
+    .container(ng-controller='CustomerCtrl')
+      .row
+        .col-xs-2
+          .panel.panel-default.examples
+            .panel-body
+              .example-questions-header Click on an example message to send it
+              ul.example-questions#examples
+                li
+                  a(ng-click="submitExample($event)") Hello
+                li
+                  a(ng-click="submitExample($event)") How are you?
+                li
+                  a(ng-click="submitExample($event)") Who are you?
+                li
+                  a(ng-click="submitExample($event)") Find me a store near WD17 1DA
+                li
+                  a(ng-click="submitExample($event)") How do I enable data?
+                li
+                  a(ng-click="submitExample($event)") Please can I speak to an advisor
+                li
+                  a(ng-click="submitExample($event)") Can I increase my data limit?
+                li
+                  a(ng-click="submitExample($event)") Why have I been charged for a text message?
+        .col-xs-10
+          - var isCustomer = true;
+          include chatPane.jade

@@ -1,0 +1,16 @@
+{
+  "data": {
+    "text": "<h3>Enabling or disabling data on an iOS device</h3>",
+    "steps": [
+      {
+          "name": "Step 1",
+          "img": "images/data/ios_0.png",
+          "text": "<p>For most smartphones you can switch off the data connection on the phone itself.</p><p>On iPhone choose <strong>Settings</strong>, then <strong>Mobile</strong>.</p>"
+      },
+      {
+          "name": "Step 2",
+          "text": "<p>If you want to stop your phone from going on the internet you could use a bar, to do this you’ll need to get in touch. This will stop your phone from being able to access the internet at all</p>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+dialog service via text support
+	is anyone already doing this?
+	search for companies from watson conference
+	Margaret researching this for us
+	too many people doing this
+	
+	
+	Create some history
+	Create some nlc - increase my data - manage dialog based on this (probably use wit.ai as it's quicker and cheaper - but could then use watson later)
+	text to indicate falling back to user input
+	seperate screen showing the active converation and alerting the CSR if help is needed
+	
+	
+	
+	Create user
+	Hi i'm fetching any messages that have been waiting on your account
+		notify phone
+		arrive including map
+		details about contract
+	Congratulations on collecting your new phone! Ask me if you have any questions about setting it up
+	Question - how do i turn on wifi?
+	Question - how do i disable roaming?
+	Bill 
+		link for more details
+	Notice you've nearly used up all your data would you like to change your data limit?
+	Offer to add another user...
+	
+	

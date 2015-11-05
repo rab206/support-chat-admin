@@ -1,0 +1,87 @@
+.icon-background {
+    color: #c0ffc0;
+}
+
+#messageList {
+  display: none;
+}
+
+#loader {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  top: 40%;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+body {
+    padding-top: 70px;
+}
+
+.sidebar {
+  border: 1px solid #e7e7e7;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+.sidebar-left {
+  padding-left: 10px;
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+}
+
+.sidebar-right  {
+  padding-right : 25px;
+  margin-right : -250px;
+  right : 250px;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-icon {
+  width:50px;
+}
+
+.sidebar ul {
+  border-top: 1px solid #e7e7e7;
+}
+
+.sidebar ul li {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.sidebar-left ul li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.user-name {
+  font-size: 19px;
+  padding-left: 12px;
+}
+
+.right-menu {
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.badge {
+  margin-top: 15px;
+}
+
+

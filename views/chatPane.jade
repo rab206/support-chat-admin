@@ -1,0 +1,52 @@
+i#loader.fa.fa-spin.fa-refresh.fa-5x
+#messageList.row
+  .col-sm-12(ng-repeat='m in messages', ng-init="currUser = users[m.userName]")
+    .row
+      .col-xs-2(ng-class="currUser.isCustomer ? 'col-xs-push-10' : ''")
+        a(href='#', ng-click='showUserModal($index)')
+          img.img-thumbnail.img-responsive.img-circle(title='{{m.userName}}', ng-src='images/{{currUser.picture}}', ng-class="currUser.isCustomer ? 'pull-left' : 'pull-right'", style='width:70px;')
+      .col-xs-10(ng-class="currUser.isCustomer ? 'col-xs-pull-2' : ''")
+        .panel.panel-default
+          .panel-body
+            div(ng-bind-html="m.html", ng-show="m.html && (m.showMore === undefined || m.showMore)")
+            a(ng-show="m.isTruncated && m.showMore", ng-click="m.showMore = ! m.showMore; window.scrollTo(0,document.body.scrollHeight);") Show more
+            div(ng-bind-html="m.fullHtml", ng-hide="m.showMore")
+            a(ng-show="m.isTruncated && !m.showMore", ng-click="m.showMore = ! m.showMore") Show less
+            div(ng-include="m.template", ng-show="m.template")
+            br
+            span.label.label-info {{ m.date | date:'MMM dd  HH:mm' }}
+.row
+  hr
+  if(isCustomer)
+    h3.text-center Ask a question and Watson will try to help
+  .col-sm-12
+    form(ng-submit="doPost()")
+      .input-group
+        input#inputText.form-control.input-lg(type='text', ng-model='text', placeholder='Reply or ask a new question')
+        span.input-group-addon(type="submit", ng-click="doPost()") Post
+  .clearfix
+  hr
+  
+#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+  .modal-dialog
+    .modal-content
+      .modal-header.bg-info
+        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+        h1#myModalLabel.text-center
+      .modal-body
+        .container.col-xs-12
+          .row
+            .col-xs-4.col-xs-offset-4
+              img.img-thumbnail.img-responsive.img-circle(ng-src='images/{{currUser.picture}}')
+          hr
+          .row
+            p.text-center
+              i.fa.fa-fw.fa-info-circle.fa-2x(ng-hide="currUser.info == null")
+              | {{currUser.info}}
+            p.text-center
+              i.fa.fa-fw.fa-envelope-o.fa-2x(ng-hide="currUser.email == null")
+              | {{currUser.email}}
+      .modal-footer.bg-info
+        button.btn.btn-lg.btn-default.center-block(data-dismiss='modal', aria-hidden='true') Okay!

@@ -1,0 +1,25 @@
+div
+  h3 Your Contract
+  p Your plan is 1GB data, 600 minutes, and unlimited texts
+  h4 Your usage for #{month} so far is:
+  table.table.table-bordered
+    thead
+      tr
+        td 
+        td Used
+        td Remaining
+    tbody
+      tr(class="#{allowance_entity === 'data' ? 'info' : ''}")
+        td Data
+        td {{$root.customer.monthlyUsage.#{month}.data}} MB
+        td {{$root.customer.contract.data * 1000 - $root.customer.monthlyUsage.#{month}.data}} MB
+      tr(class="#{allowance_entity === 'texts' ? 'info' : ''}")
+        td Texts
+        td {{$root.customer.monthlyUsage.#{month}.texts}} texts
+        td Unlimited texts
+      tr(class="#{allowance_entity === 'minutes' ? 'info' : ''}")
+        td Minutes
+        td {{$root.customer.monthlyUsage.#{month}.minutes}} minutes
+        td {{$root.customer.contract.minutes - $root.customer.monthlyUsage.#{month}.minutes}} minutes
+  p This data is accurate up to midnight.
+  p New monthly allowance starts in {{$root.customer.monthlyUsage.#{month}.endDate | daysTill}} days.

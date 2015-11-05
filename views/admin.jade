@@ -1,0 +1,115 @@
+doctype html
+html(lang='en', ng-app='chatApp')
+  head
+    title Vod Support Admin Page
+    meta(name='viewport', content='user-scalable=no')
+    
+    link(rel='shortcut icon', href='/images/favicon.ico', type='image/x-icon')
+    link(rel='icon', href='/images/favicon.ico', type='image/x-icon')
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
+    link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', type='text/css', rel='stylesheet')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css', type='text/css', rel='stylesheet')
+    link(href='/css/admin.css', type='text/css', rel='stylesheet')
+    
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(type='text/javascript', src='//vod-support-rab206.c9.io/socket.io/socket.io.js')
+    script(type='text/javascript', src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/index.js')
+  body(style="overflow-x:hidden", ng-controller="CSRCtrl")
+    #wrapper
+      nav.navbar.navbar-default.navbar-fixed-top(role='navigation', style='margin-bottom: 0')
+        .navbar-header
+          .navbar-brand Vodafone Support Console
+        .navbar-right
+          ul.nav.navbar-top-links
+            li.dropdown
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.fa.fa-user.fa-fw
+                i.fa.fa-caret-down
+              ul.dropdown-menu.dropdown-user
+                li
+                  a(href='#')
+                    i.fa.fa-user.fa-fw
+                    |  User Profile
+                li
+                  a(href='#')
+                    i.fa.fa-gear.fa-fw
+                    |  Settings
+                li.divider
+                li
+                  a(href='#')
+                    i.fa.fa-sign-out.fa-fw
+                    |  Logout
+      #page-wrapper
+        .row
+          .col-xs-10
+            .row
+              .col-xs-9.pull-right
+                .panel.panel-default
+                  .panel-heading
+                    i.fa.fa-comment.fa-fw
+                    |  Conversation Panel
+                    .pull-right
+                      .btn-group
+                        button.btn.btn-default.btn-xs.dropdown-toggle(type='button', data-toggle='dropdown')
+                          | Actions
+                          span.caret
+                        ul.dropdown-menu.pull-right(role='menu')
+                          li
+                            a(href='#') Minimize
+                          li
+                            a(href='#') Invite someone else
+                          li.divider
+                          li
+                            a(href='#') Leave Chat
+                  .panel-body(ng-controller='ChatCtrl')
+                    .container-fluid(ng-controller='CSRChatCtrl')
+                      - var isCustomer = false;
+                      include chatPane.jade
+              .col-xs-3.navbar-default.sidebar.sidebar-left
+                h4 Active Conversations
+                ul.nav.nav-tabs.nav-stacked
+                  li
+                    div
+                      img.img-thumbnail.img-responsive.img-circle.sidebar-icon(title="system", ng-src="images/paul.jpg", src="images/vodafone.jpg")
+                      span.user-name paul.hansen
+                      span.badge.alert-danger.pull-right {{$root.messages.length}}
+                  li
+                    div
+                      img.img-thumbnail.img-responsive.img-circle.sidebar-icon(title="system", ng-src="images/tracey.jpg", src="images/vodafone.jpg")
+                      span.user-name tracey.green
+                        span.badge.alert-success.pull-right 0
+          .col-xs-2.navbar-default.sidebar.sidebar-right
+            h4 Actions on this account
+            ul.nav.nav-tabs.nav-stacked
+              li
+                a.right-menu
+                  i.fa.fa-user.fa-fw
+                  |  Account Details
+              li
+                a.right-menu
+                  i.fa.fa-money.fa-fw
+                  |  Billing Details
+              li
+                a.right-menu
+                  i.fa.fa-arrow-circle-o-up.fa-fw
+                  |  Upgrades
+              li
+                a.right-menu
+                  i.fa.fa-bar-chart.fa-fw
+                  |  Usage
+              li
+                a.right-menu
+                  i.fa.fa-ban.fa-fw
+                  |  Account Blocks
+            hr
+            h4 Demo Actions   
+            ul.nav.nav-tabs.nav-stacked
+              li
+                a(href='#', ng-click='sendBill()')
+                  i.fa.fa-money.fa-fw
+                  |  Send Bill
+                  

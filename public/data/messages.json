@@ -1,0 +1,18 @@
+{
+  "messages": {
+    "paul.hansen":  [
+      {
+        "userName": "system",
+        "html": "<h3>Hi Paul!</h3> Welcome to Vodafone! This is our new interactive chat system. Every interaction with Vodafone will be logged here to ensure we can give you the best service by keeping all the information in the same place. You can also ask questions or send us instructions and our automated system will try and process them for you. But don't worry no changes will be made to your account without a trained Vodafone advisor approving it, and if you want to talk to a person let me know.",
+        "date": "2015-06-25T09:05:00.000Z"
+      }
+    ],
+    "tracey.green":  [
+      {
+        "userName": "system",
+        "html": "<h3>Hi Tracey!</h3> Welcome to Vodafone! This is our new interactive chat system. Every interaction with Vodafone will be logged here to ensure we can give you the best service by keeping all the information in the same place. You can also ask questions or send us instructions and our automated system will try and process them for you. But don't worry no changes will be made to your account without a trained Vodafone advisor approving it, and if you want to talk to a person let me know.",
+        "date": "2015-10-25T09:16:00.000Z"
+      }
+    ]
+  }
+}
