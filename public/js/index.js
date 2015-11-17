@@ -42,7 +42,7 @@ chatApp.controller('CustomerCtrl', function($scope, $rootScope, $http, $sce, $q,
       newMessage.html = $scope.text || param;
       sendMessage(newMessage);
       $scope.text = '';
-      $http.jsonp('https://api.wit.ai/message?callback=JSON_CALLBACK&q=' + newMessage.html + '&access_token=RBERXBTB2QI7OOAJAAB7RZHIMVBCW5UO')
+      $http.jsonp('https://api.wit.ai/message?callback=JSON_CALLBACK&q=' + encodeURIComponent(newMessage.html) + '&access_token=RBERXBTB2QI7OOAJAAB7RZHIMVBCW5UO')
         .success(function(response){
           console.log(response);
           if(response.outcomes[0].confidence > 0.3){
