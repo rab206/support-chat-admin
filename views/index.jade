@@ -1,7 +1,7 @@
 doctype html
 html(lang='en', ng-app='chatApp')
   head
-    title Vod Support Chat
+    title Support Chat
     
     meta(name='viewport', content='user-scalable=no')
     
@@ -16,16 +16,16 @@ html(lang='en', ng-app='chatApp')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(type='text/javascript', src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
-    script(type='text/javascript', src='//vod-support-rab206.c9.io/socket.io/socket.io.js')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
     script(type='text/javascript', src='/js/index.js')
   body(style="overflow-x:hidden", ng-controller='ChatCtrl')
     nav.navbar.navbar-default.navbar-fixed-top
       .navbar-inner
         .container
           a.navbar-brand
-            img.img-responsive.img-circle(src="images/vodafone.jpg")
+            img.img-responsive.img-circle(src="")
           .navbar-header
-            h3 Vodafone Support
+            h3 Support App
     .container(ng-controller='CustomerCtrl')
       .row
         .col-xs-2
