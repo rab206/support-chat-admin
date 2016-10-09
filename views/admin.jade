@@ -1,7 +1,7 @@
 doctype html
 html(lang='en', ng-app='chatApp')
   head
-    title Vod Support Admin Page
+    title Support Admin Page
     meta(name='viewport', content='user-scalable=no')
     
     link(rel='shortcut icon', href='/images/favicon.ico', type='image/x-icon')
@@ -15,14 +15,14 @@ html(lang='en', ng-app='chatApp')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(type='text/javascript', src='//vod-support-rab206.c9.io/socket.io/socket.io.js')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
     script(type='text/javascript', src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
     script(type='text/javascript', src='/js/index.js')
   body(style="overflow-x:hidden", ng-controller="CSRCtrl")
     #wrapper
       nav.navbar.navbar-default.navbar-fixed-top(role='navigation', style='margin-bottom: 0')
         .navbar-header
-          .navbar-brand Vodafone Support Console
+          .navbar-brand Support Console
         .navbar-right
           ul.nav.navbar-top-links
             li.dropdown
